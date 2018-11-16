@@ -4,35 +4,34 @@ int main(){
 	int n;
 	scanf("%d", &n);
 
-	double vet_A[n];
-	double vet_B[n];
-	double vet_result[n];
+	double vet1[n], vet2[n], dotvet[n];
 
 	int i;
-	for(i = 0; i < n; i++){
-		double entrada;
-		scanf("%lf", &entrada);
-		vet_A[i] = entrada;
-	}	
-
-	for(i = 0; i < n; i++){
-		double entrada;
-		scanf("%lf", &entrada);
-		vet_B[i] = entrada;
-	}	
-
-	for(i = 0; i < n; i++){
-		vet_result[i] = vet_A[i] * vet_B[i];
+	for (i = 0; i < n; ++i){
+		double ent;
+		scanf("%lf", &ent);
+		vet1[i] = ent;
 	}
 
-	printf("Produto: ");
+	for (i = 0; i < n; ++i){
+		double ent;
+		scanf("%lf", &ent);
+		vet2[i] = ent;
+	}
 
-	for(i = 0; i < n; i++){
-		printf("%.2lf ", vet_result[i]);
+	//multiplying the vector
+	for (int i = 0; i < n; ++i)
+	{
+		dotvet[i] =  vet1[i]*vet2[i];
+	}
+
+	//print the dot vector 
+	for (int i = 0; i < n; ++i)
+	{
+		printf("%.2lf ", dotvet[i]);
 	}
 
 	printf("\n");
-	
 
 	return 0;
 }

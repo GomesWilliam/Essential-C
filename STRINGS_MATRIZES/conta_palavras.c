@@ -2,24 +2,28 @@
 
 
 int main(){
-	char vet[101];
-
-	fgets(vet, 101, stdin);
+	printf("Digite uma frase: ");
+	char frase[101];
+	fgets(frase, 101, stdin);
+	//puts(frase);
 	
-	int i;	
-	int cont = 0;
-	if(vet[0] == ' ') cont--; 
+	int count_word = 0;
+	int i;
+	for(i = 0; i < 101; i++){
+		if(frase[i] == ' ' & frase[i+1] != ' ') count_word++;
+		if(i == 0)
+			if(frase[0] == ' ') count_word--;
+		if(frase[i] == '\n' & frase[i+1] == '\0' & frase[i-1] != ' ' ){
+			count_word++;
+			break;
+		}
+		//printf("%d ", i);
+		if(frase[i] == '\n') break;
 
-	for(i = 0; i < 101; i++){ 
-		
-		if((vet[i] == ' ' && vet[i+1] != ' ')  || vet[i] == '\0') cont++;
-		if(vet[i] == '\n' && vet[i - 1] == ' ') cont--;
-		if(vet[i] == '\0') break;
-	}	
+	}
 	
-	printf("%d\n", cont);
-
-
+	printf("%d\n", count_word);
+	
+	
 	return 0;
-
 }
