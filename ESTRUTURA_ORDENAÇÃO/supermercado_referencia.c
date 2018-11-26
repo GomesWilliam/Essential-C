@@ -10,13 +10,15 @@ struct mercado{
 
 int main(){
 	struct mercado vet[100];
-	void faz_operacoes(struct mercado vetor[], int n);
+	void faz_operacoes(struct mercado *vetor, int n);
 	faz_operacoes(vet, 100);
+
+	//printf("%d %.1lf %.1lf\n", vet[0].codigo, vet[0].vm_A, vet[0].vm_B);
 
 	return 0;
 }
 
-void faz_operacoes(struct mercado vetor[], int n){
+void faz_operacoes(struct mercado *vetor, int n){
 
 	int op, index = 0;
 	scanf("%d", &op);
@@ -95,3 +97,4 @@ void faz_operacoes(struct mercado vetor[], int n){
 
 
 }
+
